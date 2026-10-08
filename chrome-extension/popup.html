@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Discourse Reply Assistant</title>
+  <style>
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+    }
+    .header h2 {
+      margin: 0;
+      font-size: 15px;
+      color: #1e3a8a;
+    }
+    .field {
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+    input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 7px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    .status-card {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 12px;
+      font-size: 12px;
+      color: #1e40af;
+      line-height: 1.4;
+    }
+    .status-number {
+      font-weight: 700;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 9px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.15s;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+    .footer {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #64748b;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span>✨</span>
+    <h2>Yashvi's Reply Assistant</h2>
+  </div>
+
+  <div class="field">
+    <label for="usernameInput">Discourse Username / Roll Number</label>
+    <input type="text" id="usernameInput" value="Yashvi" placeholder="Yashvi or 24f2007780" />
+  </div>
+
+  <div class="status-card" id="statusCard">
+    <div>Library Status: <span class="status-number" id="cachedCount">0</span> answers cached</div>
+    <div style="margin-top: 4px; font-size: 11px; color: #3b82f6;" id="lastSyncTime">Last sync: Never</div>
+  </div>
+
+  <button id="saveSyncBtn">🔄 Save & Sync Library</button>
+
+  <div class="footer">
+    Works automatically on Discourse topic pages.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
